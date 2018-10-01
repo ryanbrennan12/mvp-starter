@@ -25,6 +25,19 @@ class App extends React.Component {
     });
   }
 
+ search(city) {
+   $.ajax({
+     method: 'GET',
+     url: '/flights',
+     data: {code: city},
+     dataType: 'json',
+    }).done((data) => {
+      console.log('we have the flights', data)
+    })
+
+  }
+
+
   render () {
     return (<div>
       <h1>Item List</h1>
