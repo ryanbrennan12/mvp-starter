@@ -10,14 +10,8 @@ app.use(express.static(__dirname + '/../react-client/dist'));
 
 
 
-app.get('/items', function (req, res) {
-  items.selectAll(function(err, data) {
-    if(err) {
-      res.sendStatus(500);
-    } else {
-      res.json(data);
-    }
-  });
+app.get('/flights', function (req, res) {
+  console.log('this is the body', req.body)
 });
 
 app.listen(3000, function() {
