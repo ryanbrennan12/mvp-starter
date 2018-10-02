@@ -12,27 +12,32 @@ class App extends React.Component {
     }
   }
 
-  componentDidMount() {
-    $.ajax({
-      url: '/items', 
-      success: (data) => {
-        this.setState({
-          items: data
-        })
-      },
-      error: (err) => {
-        console.log('err', err);
-      }
-    });
-  }
+  // componentDidMount() {
+  //   $.ajax({
+  //     url: '/items', 
+  //     success: (data) => {
+  //       this.setState({
+  //         items: data
+  //       })
+  //     },
+  //     error: (err) => {
+  //       console.log('err', err);
+  //     }
+  //   });
+  // }
 
   //pass through as props as onSearch
  search(city, price, leaveDate, returnDate) {
-   console.log('Coming Through to search: ', city, price, leaveDate, returnDate)
+   console.log('this is the city', city)
    $.ajax({
-     method: 'GET',
+     method: 'POST',
      url: '/flights',
-     data: {code: city},
+     data: {
+       city: city,
+       price: price, 
+       leaveDate: leaveDate,
+       returnDate: returnDate
+     },
      dataType: 'json',
     }).done((data) => {
       console.log('we have the flights', data)

@@ -15,25 +15,21 @@ class Search extends React.Component {
 
   
   onChangeCity(e) {
-    console.log('This is the Aiport', e.target.value)
     this.setState({
       city: e.target.value
     })
   }
   onPriceChange(e) {
-    console.log('This is the Price', e.target.value)
     this.setState({
       price: e.target.value
     })
   }
   onLeaveChange(e) {
-    console.log('This is the Leave Date', e.target.value)
     this.setState({
       leave: e.target.value
     })
   }
   onReturnChange(e) {
-    console.log('This is the Retun Date', e.target.value)
     this.setState({
       return: e.target.value
     })
