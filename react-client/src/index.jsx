@@ -27,7 +27,8 @@ class App extends React.Component {
   }
 
   //pass through as props as onSearch
- search(city) {
+ search(city, price, leaveDate, returnDate) {
+   console.log('Coming Through to search: ', city, price, leaveDate, returnDate)
    $.ajax({
      method: 'GET',
      url: '/flights',
