@@ -12,7 +12,7 @@ class App extends React.Component {
     }
   }
   //will save every starred flight (these are faves) 
-  //and the rip w/componentDidmount...maybe
+  // and the rip w/componentDidmount...maybe
   // componentDidMount() {
   //   $.ajax({
   //     url: '/items', 
@@ -44,7 +44,7 @@ class App extends React.Component {
       const quotes = data.filter(((quote) => {
         return quote.MinPrice <= price
       }))
-      console.log('Quotes', quotes)
+      console.log(quotes)
       this.setState({items: quotes})
     })
 
