@@ -41,8 +41,11 @@ class App extends React.Component {
      },
      dataType: 'json',
     }).done((data) => {
-      // console.log(data)
-      this.setState({items: data})
+      const quotes = data.filter(((quote) => {
+        return quote.MinPrice <= price
+      }))
+      console.log('Quotes', quotes)
+      this.setState({items: quotes})
     })
 
   }
