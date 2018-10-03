@@ -10,7 +10,8 @@ let callApi = (city, amount, leaveDate, returnDate, cb) => {
   .header("X-Mashape-Key", "oBL36Vab07mshN89Y6zhLzcGTFl2p1Rga7AjsnEoiHYwPJl0wM")
   .header("X-Mashape-Host", "skyscanner-skyscanner-flight-search-v1.p.mashape.com")
   .end(function (result) {
-    cb(result.body.Quotes)
+    // cb(result.body.Quotes)
+    cb(result.body)
   });
   
 }
@@ -19,3 +20,5 @@ let callApi = (city, amount, leaveDate, returnDate, cb) => {
 
 
 module.exports.callApi = callApi;
+
+// [Math.floor(Math.random() * places.length)]

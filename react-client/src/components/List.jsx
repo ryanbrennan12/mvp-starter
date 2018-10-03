@@ -13,8 +13,8 @@ const List = (props) => (
     })}
   </div>
 )
-
-
-
 export default List;
+
+
+
 // { props.items.map(item => <ListItem item={item}/>)}
