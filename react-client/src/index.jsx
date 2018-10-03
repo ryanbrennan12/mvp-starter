@@ -41,7 +41,8 @@ class App extends React.Component {
      },
      dataType: 'json',
     }).done((data) => {
-      console.log('we have the flights', data)
+      // console.log(data)
+      this.setState({items: data})
     })
 
   }
