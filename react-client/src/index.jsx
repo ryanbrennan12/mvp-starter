@@ -11,7 +11,8 @@ class App extends React.Component {
       items: []
     }
   }
-
+  //will save every starred flight (these are faves) 
+  //and the rip w/componentDidmount...maybe
   // componentDidMount() {
   //   $.ajax({
   //     url: '/items', 

@@ -19,7 +19,9 @@ app.post('/flights', function (req, res) {
   let returnDate = req.body.returnDate
   console.log('THESE ARE THE THINGS', city, price, leaveDate, returnDate)
 
-  apiHelper.callApi(city, price, leaveDate, returnDate)
+  apiHelper.callApi(city, price, leaveDate, returnDate, (data) => {
+    res.send(data)
+  })
 });
 
 app.listen(3000, function() {
