@@ -10,8 +10,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: [],   //prices
-      dests: []
+      items: []
     }
   }
   //will save every starred flight (these are faves) 
@@ -51,23 +50,24 @@ class App extends React.Component {
           prices.forEach((price) => {
             data.Places.forEach((place) => {
               if (price.OutboundLeg.DestinationId === place.PlaceId) {
-                output.push([price.MinPrice, place.Name])
+                output.push([place.CityName, price.MinPrice])
               }
             })
           })
           return output;
         })
         .then((results) => {
-          console.log('OMG puhleeze', results)
+          // console.log('RESULTS', results)
+          this.setState({items: results})
+          console.log(this.state)
         })
-        //  this.setState({items: quotes})
       })
     }
     render() {
       return (<div>
         <h1>Item List</h1>
         <Search onSearch={this.search.bind(this)} />
-        <List items={this.state.items} />
+        <List items={this.state.items}  />
       </div>)
     }
   }

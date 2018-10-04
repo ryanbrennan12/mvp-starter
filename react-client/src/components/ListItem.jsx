@@ -3,7 +3,8 @@ import React from 'react';
 const ListItem = (props) => (
   <div>
     
-    { props.item.OutboundLeg.DestinationId }
+    {props.city + ': $' + props.price}
+    {/* { props.item.price} */}
   </div>
 )
 

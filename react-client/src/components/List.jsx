@@ -8,7 +8,8 @@ const List = (props) => (
 
     {props.items.map((item, i) => {
       return (
-        <ListItem key={i} item={item}/>
+        //[city, price]
+        <ListItem key={i} city={item[0]} price={item[1]}/>
       )
     })}
   </div>
