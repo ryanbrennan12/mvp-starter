@@ -1,10 +1,10 @@
 import React from 'react';
 
 const ListItem = (props) => (
-  <div>
+  <div onClick={() => props.onClick()}>
     
     {props.city + ': $' + props.price}
-    {/* { props.item.price} */}
+    
   </div>
 )
 

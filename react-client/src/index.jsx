@@ -30,6 +30,9 @@ class App extends React.Component {
   // }
 
   //pass through as props as onSearch
+  clickMe() {
+    console.log('clicked!!!')
+  }
   search(city, price, leaveDate, returnDate) {
     console.log('this is the city', city)
     $.ajax({
@@ -67,7 +70,8 @@ class App extends React.Component {
       return (<div>
         <h1>Item List</h1>
         <Search onSearch={this.search.bind(this)} />
-        <List items={this.state.items}  />
+        <List items={this.state.items} onClick={this.clickMe.bind(this)}/>
+        
       </div>)
     }
   }

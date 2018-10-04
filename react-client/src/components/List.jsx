@@ -9,7 +9,7 @@ const List = (props) => (
     {props.items.map((item, i) => {
       return (
         //[city, price]
-        <ListItem key={i} city={item[0]} price={item[1]}/>
+        <ListItem key={i} city={item[0]} price={item[1]} onClick={props.onClick}/>
       )
     })}
   </div>
@@ -18,4 +18,4 @@ export default List;
 
 
 
-// { props.items.map(item => <ListItem item={item}/>)}
+// { props.items.map(item => <ListItem item={item}/>)} 
