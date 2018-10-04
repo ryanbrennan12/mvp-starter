@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 const apiHelper = require('../server-helper/apicall.js')
+const db = require('../database-mongo/index.js')
 
 //MONGO
 // var items = require('../database-mongo');
@@ -27,8 +28,8 @@ app.post('/flights', function (req, res) {
 
 app.post('/liked', (req, res) => {
   console.log('TEST LIKED!!!', req.body.city, req.body.price)
-  ///save to db
-  //res.send('flight was saved to db')
+  db.save(req.body.city, req.body.price)
+  res.json('flight was saved to db')
 })
 
 

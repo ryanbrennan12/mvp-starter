@@ -17,19 +17,25 @@ db.once('open', function() {
   console.log('mongoose connected successfully');
 });
 
-var itemSchema = mongoose.Schema({
+var quoteSchema = mongoose.Schema({
   city: String,
   price: Number 
 });
 
-var Item = mongoose.model('Item', itemSchema);
+var Quote = mongoose.model('Quote', quoteSchema);
 
-// new Item({
-//   quantity: 44,
-//   description: 'ryan'
-// }).save().catch((err) => {
-//   console.log('ERROR IN SAVING', err)
-// })
+const save = (city, price) => {
+  new Quote({
+    city: city,
+    price: price
+  }).save().then(() => {
+    console.log('SAVED SUCCESSFULLY TO DB')
+  }).catch((err) => {
+    console.log('ERROR IN SAVING', err)
+  })
+}
+
+
 
 
 
@@ -38,9 +44,9 @@ var Item = mongoose.model('Item', itemSchema);
 //     if(err) {
 //       callback(err, null);
 //     } else {
-//       callback(null, items);
+//       callback(null, items)
 //     }
 //   });
 // };
 
-// module.exports.selectAll = selectAll;
+module.exports.save = save;;

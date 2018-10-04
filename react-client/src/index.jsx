@@ -31,14 +31,15 @@ class App extends React.Component {
 
   //pass through as props as onSearch
   clickMe(city, price) {
-    console.log(price)
+   
     $.ajax({
       method: 'POST', 
       url: '/liked',
       data: { city: city, price: price },
       dataType: 'json'
-    }).done(() => {
-      console.log('DATA SENT TO SERVER')
+    }).done((data) => {
+      //only works if we get it back sannn
+      console.log(data)
     })
 
   }
