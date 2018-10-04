@@ -18,8 +18,16 @@ db.once('open', function() {
 });
 
 var quoteSchema = mongoose.Schema({
-  city: String,
-  price: Number 
+  city: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  price: {
+    type: Number,
+    required: true,
+    unique: true
+  }
 });
 
 var Quote = mongoose.model('Quote', quoteSchema);
