@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import Search from './components/Search.jsx';
 import List from './components/List.jsx';
-const { filterAsync } = require('node-filter-async');
+// const { filterAsync } = require('node-filter-async');
 const filter = require('promise-filter')
 
 class App extends React.Component {
@@ -30,8 +30,17 @@ class App extends React.Component {
   // }
 
   //pass through as props as onSearch
-  clickMe() {
-    console.log('clicked!!!')
+  clickMe(city, price) {
+    console.log(price)
+    $.ajax({
+      method: 'POST', 
+      url: '/liked',
+      data: { city: city, price: price },
+      dataType: 'json'
+    }).done(() => {
+      console.log('DATA SENT TO SERVER')
+    })
+
   }
   search(city, price, leaveDate, returnDate) {
     console.log('this is the city', city)
@@ -71,7 +80,7 @@ class App extends React.Component {
         <h1>Item List</h1>
         <Search onSearch={this.search.bind(this)} />
         <List items={this.state.items} onClick={this.clickMe.bind(this)}/>
-        
+        {/* <VideoList videos={this.state.videos} onClick={this.handleClick.bind(this)}/> */}
       </div>)
     }
   }

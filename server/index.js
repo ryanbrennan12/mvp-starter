@@ -25,6 +25,13 @@ app.post('/flights', function (req, res) {
   })
 });
 
+app.post('/liked', (req, res) => {
+  console.log('TEST LIKED!!!', req.body.city, req.body.price)
+  ///save to db
+  //res.send('flight was saved to db')
+})
+
+
 app.listen(3000, function() {
   console.log('listening on port 3000!');
 });

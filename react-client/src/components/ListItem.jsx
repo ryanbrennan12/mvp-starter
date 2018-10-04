@@ -1,8 +1,8 @@
 import React from 'react';
 
 const ListItem = (props) => (
-  <div onClick={() => props.onClick()}>
-    
+  <div>
+     <button onClick={() => props.onClick(props.city, props.price)}>I like dis One!</button>
     {props.city + ': $' + props.price}
     
   </div>

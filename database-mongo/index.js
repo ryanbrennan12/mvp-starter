@@ -1,5 +1,11 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost/mvp')
+.then(() => {
+  console.log('DATABASE CONNECTED!!!')
+})
+.catch((err) => {
+  console.log('DB ERROR CONNECTING', err)
+})
 
 var db = mongoose.connection;
 
@@ -12,20 +18,29 @@ db.once('open', function() {
 });
 
 var itemSchema = mongoose.Schema({
-  quantity: Number,
-  description: String
+  city: String,
+  price: Number 
 });
 
 var Item = mongoose.model('Item', itemSchema);
 
-var selectAll = function(callback) {
-  Item.find({}, function(err, items) {
-    if(err) {
-      callback(err, null);
-    } else {
-      callback(null, items);
-    }
-  });
-};
+// new Item({
+//   quantity: 44,
+//   description: 'ryan'
+// }).save().catch((err) => {
+//   console.log('ERROR IN SAVING', err)
+// })
 
-module.exports.selectAll = selectAll;
+
+
+// var selectAll = function(callback) {
+//   Item.find({}, function(err, items) {
+//     if(err) {
+//       callback(err, null);
+//     } else {
+//       callback(null, items);
+//     }
+//   });
+// };
+
+// module.exports.selectAll = selectAll;
