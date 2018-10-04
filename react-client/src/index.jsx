@@ -15,19 +15,20 @@ class App extends React.Component {
   }
   //will save every starred flight (these are faves) 
   // and the rip w/componentDidmount...maybe
-  // componentDidMount() {
-  //   $.ajax({
-  //     url: '/items', 
-  //     success: (data) => {
-  //       this.setState({
-  //         items: data
-  //       })
-  //     },
-  //     error: (err) => {
-  //       console.log('err', err);
-  //     }
-  //   });
-  // }
+  componentDidMount() {
+    $.ajax({
+      url: '/liked', 
+      success: (data) => {
+        this.setState({
+          items: data
+        })
+        console.log('do I have a body?', data)
+      },
+      error: (err) => {
+        console.log('err', err);
+      }
+    });
+  }
 
   //pass through as props as onSearch
   clickMe(city, price) {
