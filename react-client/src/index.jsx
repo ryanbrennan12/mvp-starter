@@ -44,59 +44,37 @@ class App extends React.Component {
       },
       dataType: 'json',
     }).done((data) => {
-      //data is coming through as Places and Quotes
-      console.log('This is data', data)
-
       Promise.resolve(data.Quotes)
         .then(filter((quote) => quote.MinPrice <= price))
         .then((prices) => {
-           prices.map((price) => {
-            let priceDestId = price.OutboundLeg.DestinationId //Def a number
-            // console.log('PRICE ID', priceDestId)
-            data.Places.map((place) => {
-              let destiId = place.PlaceId
-              console.log(priceDestId)
-              if (destiId === priceDestId) {
-                 console.log('true')
+          let output = []
+          prices.forEach((price) => {
+            data.Places.forEach((place) => {
+              if (price.OutboundLeg.DestinationId === place.PlaceId) {
+                output.push([price.MinPrice, place.Name])
               }
             })
           })
-        }).then((results) => {
+          return output;
+        })
+        .then((results) => {
           console.log('OMG puhleeze', results)
         })
-
-                
-
-
-      // const quotes = data.Quotes.filter(((quote) => {
-      //     if (quote.MinPrice <= price) {
-      //       return quote
-      //     }
-      // }))
-
-      //   const final = quotes.forEach((product) => {
-      //    data.Places.forEach((place) => {
-      //      if (place.PLaceId[product.OutboundLeg.DestinantionId]) {
-      //        return [quote.MinPrice, place.CityName]
-      //      }
-      //    })
-      //  })
-
-      //  this.setState({items: quotes})
-    })
+        //  this.setState({items: quotes})
+      })
+    }
+    render() {
+      return (<div>
+        <h1>Item List</h1>
+        <Search onSearch={this.search.bind(this)} />
+        <List items={this.state.items} />
+      </div>)
+    }
   }
+  
+  ReactDOM.render(<App />, document.getElementById('app'));
 
 
 
 
 
-  render() {
-    return (<div>
-      <h1>Item List</h1>
-      <Search onSearch={this.search.bind(this)} />
-      <List items={this.state.items} />
-    </div>)
-  }
-}
-
-ReactDOM.render(<App />, document.getElementById('app'));
