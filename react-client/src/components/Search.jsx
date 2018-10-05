@@ -1,5 +1,22 @@
 import React from 'react';
+import styled from 'styled-components'
 //passing in seac rh function that has to be called in here
+const Div = styled.div`
+  padding: 20px
+`;
+
+const Button = styled.button`
+  background: #00FFFF;
+  border: 5px solid black;
+  border-radius: 15px;
+  font-size: 20px;
+  font-family:  Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif;
+  
+  /* color:blue; */
+`;
+
+
+
 
 class Search extends React.Component {
   constructor(props) {
@@ -11,7 +28,6 @@ class Search extends React.Component {
       return: '',
     }
   }
-
 
   
   onChangeCity(e) {
@@ -44,8 +60,8 @@ class Search extends React.Component {
 
  
   render() {
-    return (<div>
-          Get me outta here:
+    return (<Div>
+          Get me outta here: 
           <p><input value={this.state.city} onChange={this.onChangeCity.bind(this)} /></p>
           This is all I have $$
           <p><input value={this.state.price} onChange={this.onPriceChange.bind(this)} /></p>
@@ -53,9 +69,12 @@ class Search extends React.Component {
           <p><input value={this.state.leave} onChange={this.onLeaveChange.bind(this)} /></p>
           Coming Back
           <p><input value={this.state.return} onChange={this.onReturnChange.bind(this)} /></p>
-          <button onClick={this.search.bind(this)}>Go Go Go!!!</button>
-
-    </div>
+          {/* <input type="submit" /> */}
+          <Button onClick={this.search.bind(this)}>Find Me Flights plz✌️✌️✈️</Button>
+    </Div>
+  
+     
+        
 
 
 
