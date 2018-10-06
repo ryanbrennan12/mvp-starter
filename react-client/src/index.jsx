@@ -79,7 +79,8 @@ class App extends React.Component {
     }
     render() {
       return (<div>
-        <h1>Item List</h1>
+        <img src="flight.svg"/>
+        <h1 className="header-chumpy">justGo</h1>
         <Search onSearch={this.search.bind(this)} />
         <List items={this.state.items} onClick={this.clickMe.bind(this)}/>
         {/* <VideoList videos={this.state.videos} onClick={this.handleClick.bind(this)}/> */}

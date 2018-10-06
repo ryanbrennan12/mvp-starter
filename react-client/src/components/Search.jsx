@@ -15,7 +15,7 @@ const Button = styled.button`
   /* color:blue; */
 `;
 const Div = styled.div`
-  margin-top: 50px;
+  margin-top: 40px;
   padding: 5px;
   font-family:  Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif;
   font-size:15pt;
