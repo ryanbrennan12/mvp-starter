@@ -10,10 +10,10 @@ const Button = styled.button`
   font-size: 20px;
   color: white;
   font-family:  Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif;
+  `;
   
   
   /* color:blue; */
-`;
 const Div = styled.div`
   margin-top: 40px;
   padding: 5px;
@@ -29,9 +29,13 @@ const Input = styled.input`
   font-size:14pt;
   font-family:  Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif;
 `
-
-
-
+const H1 = styled.h1`
+  font-size:25pt;
+  font-family:  Verdana;
+`
+const H2 = styled.h2`
+  font-size:15pt;
+`
 
 class Search extends React.Component {
   constructor(props) {
@@ -77,8 +81,10 @@ class Search extends React.Component {
   render() {
     return (
       <Div>
+        <H1>Lowest Price Flights</H1>
+        <H2>justGo's finder is here to support your spontaneity</H2>
     <Div>
-      City
+      Leaving From
           <p><Input value={this.state.city} onChange={this.onChangeCity.bind(this)} /></p>
     </Div>
       <Div>
@@ -86,7 +92,7 @@ class Search extends React.Component {
           <p><Input value={this.state.price} onChange={this.onPriceChange.bind(this)} /></p>
       </Div>
       <Div>
-        Leaving
+        Depart
           <p><Input value={this.state.leave} onChange={this.onLeaveChange.bind(this)} /></p>
       </Div>
       <Div>
@@ -98,12 +104,11 @@ class Search extends React.Component {
     </Div>
   </Div>
      
-        
-
-
-
     )
   }
 }
 
 export default Search
+        
+
+

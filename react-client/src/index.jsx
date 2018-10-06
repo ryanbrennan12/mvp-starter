@@ -57,6 +57,7 @@ class App extends React.Component {
       },
       dataType: 'json',
     }).done((data) => {
+      console.log('THIS IS THE DATA', data)
       Promise.resolve(data.Quotes)
         .then(filter((quote) => quote.MinPrice <= price))
         .then((prices) => {
@@ -81,7 +82,7 @@ class App extends React.Component {
       return (<div>
         <div className="header">
         <h1 className="header-chumpy">justGo</h1>
-        <img src="flight.svg" alt="logo"/>
+        <img className="my-svg-alternate" src="flight.svg" alt="logo"/>
         </div>
         <Search onSearch={this.search.bind(this)} />
         <List items={this.state.items} onClick={this.clickMe.bind(this)}/>

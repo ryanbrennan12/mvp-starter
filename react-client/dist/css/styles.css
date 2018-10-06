@@ -18,6 +18,7 @@ body {
   background-size: 1500px 400px;
   background-repeat: no-repeat;
   background-attachment: fixed;
+
   background-position: center 
   
  
@@ -35,8 +36,9 @@ body {
   width: 100px;
   height: 100px;
   background:white;
-  color: #00B2D6
+
 }
+
 
 .header h1 {
   float: left;

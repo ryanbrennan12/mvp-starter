@@ -6,8 +6,8 @@ import styled from 'styled-components'
 const Div = styled.div`
   font-family:  Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif;
   font-size: 17px;
-  color: white;
-  margin-top: 25px;
+  color: black;
+  margin-top: 140px;
   
 `
 
