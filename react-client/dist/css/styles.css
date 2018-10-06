@@ -29,3 +29,19 @@ body {
   font-size:30pt;
   color: #00B2D6
 }
+
+.header img {
+  
+  width: 100px;
+  height: 100px;
+  background:white;
+  color: #00B2D6
+}
+
+.header h1 {
+  float: left;
+  position: relative;
+  top: 18px;
+  left: 10px;
+  margin-right: 10px;
+}

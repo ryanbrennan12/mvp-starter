@@ -79,8 +79,10 @@ class App extends React.Component {
     }
     render() {
       return (<div>
-        <img src="flight.svg"/>
+        <div className="header">
         <h1 className="header-chumpy">justGo</h1>
+        <img src="flight.svg" alt="logo"/>
+        </div>
         <Search onSearch={this.search.bind(this)} />
         <List items={this.state.items} onClick={this.clickMe.bind(this)}/>
         {/* <VideoList videos={this.state.videos} onClick={this.handleClick.bind(this)}/> */}
@@ -91,6 +93,9 @@ class App extends React.Component {
   ReactDOM.render(<App />, document.getElementById('app'));
 
 
-
+<div class="header">
+  <img src="img/logo.png" alt="logo" />
+  <h1>My website name</h1>
+</div>
 
 
