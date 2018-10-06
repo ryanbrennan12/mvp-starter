@@ -1,0 +1,30 @@
+/* .quote-list {
+  background: #fff;
+  padding: 8px;
+  border: 0;
+  box-shadow: 0 1px 2px rgba(0,0,0,.1);
+  margin-right: 20px;
+}
+
+.quote-item {
+  font-size: 16px;
+  padding: 8px;
+} */
+
+body {
+  /* background: linear-gradient(#e66465, #9198e5); */
+  
+  background-image: url("./assets/hero.jpg");
+  background-size: 1500px 400px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center 
+  
+ 
+  
+}
+
+.header-chumpy {
+  font-family:  Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif;
+  font-size:15pt;
+}

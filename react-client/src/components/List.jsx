@@ -1,10 +1,19 @@
 import React from 'react';
 import ListItem from './ListItem.jsx';
+import styled from 'styled-components'
+
 // import '/Users/ryanbrennan/Desktop/Sprints/MVP/rpt09-mvp-starter/styles/styles.css'
+const Div = styled.div`
+  font-family:  Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif;
+  font-size: 17px;
+  color: white;
+  margin-top: 25px;
+  
+`
 
 const List = (props) => (
-  <div className="quote-list">
-    There are { props.items.length } items.
+  <Div className="quote-list">
+    We Found You { props.items.length } Flights
 
 
     {props.items.map((item, i) => {
@@ -16,7 +25,7 @@ const List = (props) => (
         </div>
       )
     })}
-  </div>
+  </Div>
 )
 export default List;
 
