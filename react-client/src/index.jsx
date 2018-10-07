@@ -3,8 +3,11 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import Search from './components/Search.jsx';
 import List from './components/List.jsx';
+import Purchase from './components/Purchase.jsx'
 // const { filterAsync } = require('node-filter-async');
+
 const filter = require('promise-filter')
+
 
 class App extends React.Component {
   constructor(props) {
@@ -13,6 +16,7 @@ class App extends React.Component {
       items: []
     }
   }
+  
   //will save every starred flight (these are faves) 
   // and the rip w/componentDidmount...maybe
   componentDidMount() {
@@ -30,9 +34,10 @@ class App extends React.Component {
     });
   }
 
+  
   //pass through as props as onSearch
+  //it's the clickMe function!!!
   clickMe(city, price) {
-   
     $.ajax({
       method: 'POST', 
       url: '/liked',
@@ -40,7 +45,7 @@ class App extends React.Component {
       dataType: 'json'
     }).done((data) => {
       //only works if we get it back sannn
-      console.log(data)
+      console.log('DATERRR',data)
     })
 
   }
@@ -86,6 +91,7 @@ class App extends React.Component {
         </div>
         <Search onSearch={this.search.bind(this)} />
         <List items={this.state.items} onClick={this.clickMe.bind(this)}/>
+        <Purchase />
         {/* <VideoList videos={this.state.videos} onClick={this.handleClick.bind(this)}/> */}
       </div>)
     }

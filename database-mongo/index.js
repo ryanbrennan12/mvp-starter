@@ -33,6 +33,7 @@ var quoteSchema = mongoose.Schema({
 var Quote = mongoose.model('Quote', quoteSchema);
 
 const save = (city, price) => {
+  //save could fire off rerender on client
   new Quote({
     city: city,
     price: price
