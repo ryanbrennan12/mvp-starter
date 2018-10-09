@@ -20,7 +20,7 @@ const List = (props) => (
       return (
         //[city, price]
         <div>
-        <ListItem key={i} city={item[0]} price={item[1]} onClick={props.onClick}/>
+        <ListItem key={i} city={item[0]} price={item[1]} leave={item[2]} returning={item[3]} onClick={props.onClick}/>
       
         </div>
       )

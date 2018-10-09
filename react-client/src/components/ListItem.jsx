@@ -20,7 +20,7 @@ const Button = styled.button`
 const ListItem = (props) => (
   <div>
      {/* savimng to DB on this click */}
-     <Button onClick={() => props.onClick(props.city, props.price)}>Select</Button>
+     <Button onClick={() => props.onClick(props.city, props.price, props.leave, props.returning)}>Select</Button>
      {props.city + ': $' + props.price}
   </div>
 )

@@ -37,15 +37,24 @@ class App extends React.Component {
   
   //pass through as props as onSearch
   //it's the clickMe function!!!
-  clickMe(city, price) {
+  clickMe(city, price, leave, returning) {
+    
     $.ajax({
       method: 'POST', 
       url: '/liked',
-      data: { city: city, price: price },
+      data: { city: city, price: price, leave: leave, returning: returning },
       dataType: 'json'
     }).done((data) => {
-      //only works if we get it back sannn
-      console.log('DATERRR',data)
+      let options = {city: data.city, price: data.price, leave: data.leave, returning: data.returning}
+      console.log('this is the data from fetch', data)
+      fetch('/reroute', {
+        method: 'POST',
+        headers:{
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(options)
+      })
+
     })
 
   }
@@ -70,10 +79,11 @@ class App extends React.Component {
           prices.forEach((price) => {
             data.Places.forEach((place) => {
               if (price.OutboundLeg.DestinationId === place.PlaceId) {
-                output.push([place.CityName, price.MinPrice])
+                output.push([place.CityName, price.MinPrice, leaveDate, returnDate])
               }
             })
           })
+        
           return output;
         })
         .then((results) => {
@@ -91,7 +101,7 @@ class App extends React.Component {
         </div>
         <Search onSearch={this.search.bind(this)} />
         <List items={this.state.items} onClick={this.clickMe.bind(this)}/>
-        <Purchase />
+        {/* <Purchase /> */}
         {/* <VideoList videos={this.state.videos} onClick={this.handleClick.bind(this)}/> */}
       </div>)
     }

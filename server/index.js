@@ -10,7 +10,8 @@ const Repo = mongoose.model('Quote')
 // var items = require('../database-mongo');
 
 var app = express();
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json());
 // UNCOMMENT FOR REACT
 app.use(express.static(__dirname + '/../react-client/dist'));
 
@@ -29,10 +30,20 @@ app.post('/flights', function (req, res) {
   })
 });
 
-app.post('/liked', (req, res) => {
+app.post('/reroute', ((req, res) => {
+  console.log('Body on Reroute', req.body)
+}))
 
-  db.save(req.body.city, req.body.price)
-  res.json('flight was saved to db')
+
+
+app.post('/liked', (req, res) => {
+  let city = req.body.city;
+  let price = req.body.price;
+  let leave = req.body.leave;
+  let returning= req.body.returning;
+  db.save(city, price)
+  ///SENDING BACK FOR FETCH
+  res.json({city: city, price: price, leave: leave, returning: returning})
 })
 
 app.get('/liked', ((req, res) => {
@@ -46,7 +57,6 @@ app.get('/liked', ((req, res) => {
     })
     return output
   }).then((sorted) => {
-    console.log(sorted)
     res.json(sorted)
   }).catch((err) => {
     console.log('ERROR IN /liked', err)
