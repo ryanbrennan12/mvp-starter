@@ -3,13 +3,18 @@ import styled from 'styled-components'
 
 const DivContainer = styled.div`
   font-family:  Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
   margin: 0 auto; 
   margin-top: -170px;
   border:4px solid gray;
   font-size: 15px;
-  height: 120px;
+  height: auto;
   width: 640px;
+  position: absolute;
   border-radius: 10px;
+  background: white;
   /* background-color: #00B2D6; */
   `
   const DivOutBound = styled.div`
@@ -31,35 +36,35 @@ const DestiDiv = styled.div`
 
 
 
-const Purchase = () => {
+const Purchase = (props) => {
   return (
 
     <DivContainer>
        <DivOutBound>
-                <h2Out><span>Outbond:</span> Thu, Oct 11, 2018</h2Out>
+                <h2Out><span>Outbond:</span>{props.leave}</h2Out>
                 
         </DivOutBound>
-        <div class="big_box box">
-                <div class="col-sm-3">
-                    <div class="operat_airline">
+        <div className="big_box box">
+                <div className="col-sm-3">
+                    <div className="operat_airline">
                         <h2Box>Operated by Compass Airlines</h2Box>
                     </div>
                 </div>
-                <div class="col-sm-9">
-                    <div class="main">
-                        <div class="time">
-                            <h2>5:40 AM<span>SFO</span></h2>
+                <div className="col-sm-9">
+                    <div className="main">
+                        <div className="time">
+                            <h2>5:40 AM<span>{props.origin}</span></h2>
                         </div>
                         <DestiDiv>
                             <h3>1h 22m</h3>
-                            <div class="line"></div>
+                            <div className="line"></div>
                             <h4>Non-stop</h4>
                         </DestiDiv>
 
-                        <div class="time2">
-                            <h2>7:02 AM<span>Lax</span></h2>
+                        <div className="time2">
+                            <h2>7:02 AM<span>{props.city}</span></h2>
                         </div>
-                        <a href="#"> <i class="fa fa-angle-down"></i></a>
+                        <a href="#"> <i className="fa fa-angle-down"></i></a>
                     </div>
                 </div>
             </div>
@@ -69,3 +74,9 @@ const Purchase = () => {
 }
 
 export default Purchase
+
+  // city: null,
+  // price: null,
+  // leave: null,
+  // returning: null,
+  // origin: null

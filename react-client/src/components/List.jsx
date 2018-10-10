@@ -14,13 +14,14 @@ const Div = styled.div`
 const List = (props) => (
   <Div className="quote-list">
     We Found You { props.items.length } Flights
+    <button>I am a button</button>
 
 
     {props.items.map((item, i) => {
       return (
         //[city, price]
         <div>
-        <ListItem key={i} city={item[0]} price={item[1]} leave={item[2]} returning={item[3]} onClick={props.onClick}/>
+        <ListItem key={i} city={item[0]} price={item[1]} leave={item[2]} returning={item[3]} origin={item[4]} onClick={props.onClick}/>
       
         </div>
       )

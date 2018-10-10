@@ -32,18 +32,20 @@ app.post('/flights', function (req, res) {
 
 app.post('/reroute', ((req, res) => {
   console.log('Body on Reroute', req.body)
+  // res.redirect('https://www.google.com')
 }))
 
 
 
 app.post('/liked', (req, res) => {
+  let origin= req.body.origin;
   let city = req.body.city;
   let price = req.body.price;
   let leave = req.body.leave;
   let returning= req.body.returning;
   db.save(city, price)
   ///SENDING BACK FOR FETCH
-  res.json({city: city, price: price, leave: leave, returning: returning})
+  res.json({origin: origin, city: city, price: price, leave: leave, returning: returning})
 })
 
 app.get('/liked', ((req, res) => {
