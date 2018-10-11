@@ -24,7 +24,17 @@ class App extends React.Component {
     }
     this.handleDelete = this.handleDelete.bind(this);
     this.clickMe = this.clickMe.bind(this)
+    this.handleClosePurchase = this.handleClosePurchase.bind(this)
   }
+  
+  handleClosePurchase() {
+    console.log('handle close Clicked')
+    this.setState({
+      purchaseToggle: false
+    })
+  }
+  
+  
   componentDidMount() {
     $.ajax({
       url: '/liked',
@@ -114,7 +124,7 @@ class App extends React.Component {
       </div>
       {this.state.purchaseToggle ?
 
-        <Purchase city={this.state.city} price={this.state.price} leave={this.state.leave} return={this.state.returning} origin={this.state.origin} />
+        <Purchase city={this.state.city} price={this.state.price} leave={this.state.leave} return={this.state.returning} origin={this.state.origin} onClose={this.handleClosePurchase} />
         : null}
       <Search onSearch={this.search.bind(this)} />
       <List items={this.state.items} onClick={this.clickMe} onDelete={this.handleDelete} />

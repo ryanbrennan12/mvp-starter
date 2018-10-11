@@ -10,6 +10,7 @@ const Button = styled.button`
   font-size: 20px;
   color: white;
   font-family:  Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif;
+  outline: 0;
   `;
   
   

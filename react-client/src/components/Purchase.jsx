@@ -11,7 +11,7 @@ const DivContainer = styled.div`
   border:4px solid gray;
   font-size: 15px;
   height: auto;
-  width: 640px;
+  width: 575px;
   position: absolute;
   border-radius: 10px;
   background: white;
@@ -39,9 +39,31 @@ const DivContainer = styled.div`
 const DestiDiv = styled.div`
 width: 46%;
 margin: 0;
-
-    
 `
+const Button2 = styled.button`
+background:  #00B2D6;
+/* border: 2px solid black; */
+border-radius: 10px;
+font-size: 15px;
+color: white;
+font-family:  Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif;
+margin-right: 10px;
+margin-top: 8px;
+outline: 0;
+`
+const Button3 = styled.button`
+background:  #11E15A;
+/* border: 2px solid black; */
+border-radius: 10px;
+font-size: 15px;
+color: white;
+font-family:  Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif;
+right: 0;
+bottom: 0;
+position: absolute
+outline: 0;
+`
+    
 
 
 
@@ -57,7 +79,7 @@ const Purchase = (props) => {
         <div className="big_box box">
                 <div className="col-sm-3">
                     <div className="operat_airline">
-                        <h2Box>Operated by Compass Airlines</h2Box>
+                        <h2Box>Operated by Southwest Airlines</h2Box>
                     </div>
                 </div>
                 <div className="col-sm-9">
@@ -85,7 +107,7 @@ const Purchase = (props) => {
         <div className="big_box box">
                 <div className="col-sm-3">
                     <div className="operat_airline">
-                        <h2Box>Operated by Compass Airlines</h2Box>
+                        <h2Box>Operated by SouthWest Airlines</h2Box>
                     </div>
                 </div>
                 <div className="col-sm-9">
@@ -107,6 +129,8 @@ const Purchase = (props) => {
                 </div>
             </div>
         </DivInBound>
+    <Button2 onClick={() => props.onClose()}>close</Button2>
+    <Button3><a href={'https://www.southwest.com/air/booking/select.html?originationAirportCode=' + props.origin + '&destinationAirportCode=LAS&returnAirportCode=&departureDate=' + props.leave + '&departureTimeOfDay=ALL_DAY&returnDate=' +  props.return + '&returnTimeOfDay=ALL_DAY&adultPassengersCount=1&seniorPassengersCount=0&fareType=USD&passengerType=ADULT&tripType=roundtrip&promoCode=&reset=true&redirectToVision=true&int=HOMEQBOMAIR&leapfrogRequest=true'}>Purchase✈️</a></Button3>
     
     </DivContainer>
   )
@@ -114,8 +138,4 @@ const Purchase = (props) => {
 
 export default Purchase
 
-  // city: null,
-  // price: null,
-  // leave: null,
-  // returning: null,
-  // origin: null
+"https://www.southwest.com/air/booking/select.html?originationAirportCode=LAX&destinationAirportCode=PHL&returnAirportCode=&departureDate=${props.leave}&departureTimeOfDay=ALL_DAY&returnDate=2018-10-15&returnTimeOfDay=ALL_DAY&adultPassengersCount=1&seniorPassengersCount=0&fareType=USD&passengerType=ADULT&tripType=roundtrip&promoCode=&reset=true&redirectToVision=true&int=HOMEQBOMAIR&leapfrogRequest=true"
