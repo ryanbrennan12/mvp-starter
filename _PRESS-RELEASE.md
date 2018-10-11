@@ -18,27 +18,29 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
+  justGo flights
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
-
+ A tool with which to find flights to any location for under a certain amount of money.  Meant to be spontaneous.
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
-
+You will plug in how much money you have and your current location.  justGo then finds flights leaving withing the next 48 hours to all locations under that amount of money.  Future itterations would incorporate a hotel/airbnb search as well
 ## Problem ##
   > Describe the problem your product solves.
-
+We are not reinventing the wheel rather redesiging the planning (or lack there of) of a trip to be more spontaneous and fun.  The problem is we take ourselves too serioulsy.  Life is a trip so just do the thing already.  
 ## Solution ##
   > Describe how your product elegantly solves the problem.
-
+Easy interface.  Put your money amount here.  GPS finds you...then boom...all the places you can go/
 ## Quote from You ##
   > A quote from a spokesperson in your company.
-
+"Everyone should runaway from themselves now and again"
 ## How to Get Started ##
   > Describe how easy it is to get started.
-
+Open the thing and use your eyeballs...fingers as well
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
-
+"Easy peezy get-out-of-dodge app.  Interface was just begging me to jump on the plane and go"
 ## Closing and Call to Action ##
+You're a smart cookie.  I think this was pretty straight forward.  Any more spoon-feeding and I'll have to move your jaw for you too
   > Wrap it up and give pointers where the reader should go next.
