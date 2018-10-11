@@ -30,18 +30,14 @@ app.post('/flights', function (req, res) {
   })
 });
 
-// app.post('/reroute', ((req, res) => {
-//   console.log('Body on Reroute', req.body)
-//   // res.redirect('https://www.google.com')
-// }))
 
 app.post('/deleted', (req, res) => {
   db.deleted(req.body.city, () => {
-    res.redirect('/')
+    res.redirect('/liked')
   })
+})
   
 
-})
 
 
 app.post('/liked', (req, res) => {
@@ -56,6 +52,7 @@ app.post('/liked', (req, res) => {
 })
 
 app.get('/liked', ((req, res) => {
+  console.log('boom!')
   Repo.find({})
   .limit(10)
   .sort({price: -1})
@@ -66,6 +63,7 @@ app.get('/liked', ((req, res) => {
     })
     return output
   }).then((sorted) => {
+    console.log('we have sorted', sorted)
     res.json(sorted)
   }).catch((err) => {
     console.log('ERROR IN /liked', err)

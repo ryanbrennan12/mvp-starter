@@ -52,7 +52,8 @@ const deleted = (city, cb) => {
   })
   .catch((err) => {
     console.log('error in deleting', err)
-  })
+  });
+  cb()
 }
 
 
