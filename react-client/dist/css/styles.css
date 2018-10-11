@@ -15,9 +15,10 @@ body {
   /* background: linear-gradient(#e66465, #9198e5); */
   
   background-image: url("./assets/hero.jpg");
-  background-size: 1500px 400px;
+  background-size: 1600px 350px;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  
 
   background-position: center 
   
@@ -28,8 +29,12 @@ body {
 .header-chumpy {
   font-family:  Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif;
   font-size:30pt;
-  color: #00B2D6
+  color: #00B2D6;
+  /* padding-bottom: 25px; */
+
+  
 }
+
 
 .header img {
   

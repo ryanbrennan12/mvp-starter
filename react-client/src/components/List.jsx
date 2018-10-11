@@ -8,13 +8,24 @@ const Div = styled.div`
   font-size: 17px;
   color: black;
   margin-top: 140px;
+  `
+  const Button = styled.button`
+  background: #FF851B;
+  /* border: 2px solid black; */
+  border-radius: 10px;
+  font-size: 15px;
+  color: white;
+  font-family:  Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif;
+  margin-left: 8px;
+  margin-top: 8px;
+  outline: 0;
+  `
   
-`
 
 const List = (props) => (
   <Div className="quote-list">
     We Found You { props.items.length } Flights
-    <button>I am a button</button>
+    <Button>Clear Saved</Button>
 
 
     {props.items.map((item, i) => {

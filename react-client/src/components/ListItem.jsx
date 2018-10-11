@@ -10,11 +10,11 @@ const Button = styled.button`
   font-family:  Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif;
   margin-right: 8px;
   margin-top: 8px;
-  
-  
-  
-  /* color:blue; */
+  outline: 0;
 `;
+  
+
+
 
 
 const ListItem = (props) => (

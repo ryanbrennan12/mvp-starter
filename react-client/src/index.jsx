@@ -109,7 +109,7 @@ class App extends React.Component {
         </div>
         {this.state.purchaseToggle ? 
         
-        <Purchase city={this.state.city} price={this.state.price} leave={this.state.leave} return={this.state.returning} origin={this.state.orgin}/>
+        <Purchase city={this.state.city} price={this.state.price} leave={this.state.leave} return={this.state.returning} origin={this.state.origin}/>
         : null}
         <Search onSearch={this.search.bind(this)} />
         <List items={this.state.items} onClick={this.clickMe.bind(this)}/>
