@@ -9,30 +9,20 @@ const Div = styled.div`
   color: black;
   margin-top: 140px;
   `
-  const Button = styled.button`
-  background: #FF851B;
-  /* border: 2px solid black; */
-  border-radius: 10px;
-  font-size: 15px;
-  color: white;
-  font-family:  Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif;
-  margin-left: 8px;
-  margin-top: 8px;
-  outline: 0;
-  `
+
   
 
 const List = (props) => (
   <Div className="quote-list">
     We Found You { props.items.length } Flights
-    <Button>Clear Saved</Button>
+    
 
 
     {props.items.map((item, i) => {
       return (
         //[city, price]
         <div>
-        <ListItem key={i} city={item[0]} price={item[1]} leave={item[2]} returning={item[3]} origin={item[4]} onClick={props.onClick}/>
+        <ListItem key={i} city={item[0]} price={item[1]} leave={item[2]} returning={item[3]} origin={item[4]} onClick={props.onClick} onDelete={props.onDelete}/>
       
         </div>
       )

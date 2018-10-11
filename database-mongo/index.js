@@ -44,6 +44,16 @@ const save = (city, price) => {
   })
 }
 
+const deleted = (city, cb) => {
+
+  Quote.findOneAndRemove({city: city})
+  .then(() => {
+    console.log('Deleted???')
+  })
+  .catch((err) => {
+    console.log('error in deleting', err)
+  })
+}
 
 
 
@@ -58,4 +68,5 @@ const save = (city, price) => {
 //   });
 // };
 
-module.exports.save = save;;
+module.exports.save = save;
+module.exports.deleted= deleted;

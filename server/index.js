@@ -30,11 +30,18 @@ app.post('/flights', function (req, res) {
   })
 });
 
-app.post('/reroute', ((req, res) => {
-  console.log('Body on Reroute', req.body)
-  // res.redirect('https://www.google.com')
-}))
+// app.post('/reroute', ((req, res) => {
+//   console.log('Body on Reroute', req.body)
+//   // res.redirect('https://www.google.com')
+// }))
 
+app.post('/deleted', (req, res) => {
+  db.deleted(req.body.city, () => {
+    res.redirect('/')
+  })
+  
+
+})
 
 
 app.post('/liked', (req, res) => {
@@ -64,6 +71,7 @@ app.get('/liked', ((req, res) => {
     console.log('ERROR IN /liked', err)
   })
 }))
+
 
 app.listen(3000, function() {
   console.log('listening on port 3000!');

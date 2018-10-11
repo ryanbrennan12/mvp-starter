@@ -22,7 +22,8 @@ class App extends React.Component {
       purchaseToggle: false
 
     }
-
+    this.handleDelete = this.handleDelete.bind(this);
+    this.clickMe = this.clickMe.bind(this)
   }
   
   //will save every starred flight (these are faves) 
@@ -43,10 +44,20 @@ class App extends React.Component {
   }
   //pass through as props as onSearch
   //it's the clickMe function!!!
-
+  handleDelete(deleted) {
+    console.log('I am deleted from the DB', deleted)
+    fetch('/deleted', {
+      method: 'POST',
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({city: deleted})
+    })
+    
+  }
 
   clickMe(city, price, leave, returning, origin) {
-    console.log('this is the ORIGIN', origin)
+    // console.log('this is the ORIGIN', origin)
     $.ajax({
       method: 'POST', 
       url: '/liked',
@@ -56,13 +67,13 @@ class App extends React.Component {
       let options = {origin: data.origin, city: data.city, price: data.price, leave: data.leave, returning: data.returning}
       // console.log('this is the data from fetch', data.city, data.city, data.price, data.leave, data.returning )
       this.setState({city: data.city, price: data.price, leave: data.leave, returning: data.returning, origin: data.origin, purchaseToggle: true})
-      fetch('/reroute', {
-        method: 'POST',
-        headers:{
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(options)
-      })
+      // fetch('/reroute', {
+      //   method: 'POST',
+      //   headers:{
+      //     'Content-Type': 'application/json'
+      //   },
+      //   body: JSON.stringify(options)
+      // })
 
     })
 
@@ -112,7 +123,7 @@ class App extends React.Component {
         <Purchase city={this.state.city} price={this.state.price} leave={this.state.leave} return={this.state.returning} origin={this.state.origin}/>
         : null}
         <Search onSearch={this.search.bind(this)} />
-        <List items={this.state.items} onClick={this.clickMe.bind(this)}/>
+        <List items={this.state.items} onClick={this.clickMe} onDelete={this.handleDelete}/>
         {/* <VideoList videos={this.state.videos} onClick={this.handleClick.bind(this)}/> */}
       </div>)
     }
