@@ -25,9 +25,6 @@ class App extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
     this.clickMe = this.clickMe.bind(this)
   }
-
-  //will save every starred flight (these are faves) 
-  // and the rip w/componentDidmount...maybe
   componentDidMount() {
     $.ajax({
       url: '/liked',
@@ -42,8 +39,6 @@ class App extends React.Component {
       }
     });
   }
-  //pass through as props as onSearch
-  //it's the clickMe function!!!
   handleDelete(deleted) {
 
     $.ajax({
@@ -63,9 +58,6 @@ class App extends React.Component {
         })
     })
   }
-
-
-
   clickMe(city, price, leave, returning, origin) {
     // console.log('this is the ORIGIN', origin)
     $.ajax({
@@ -81,9 +73,6 @@ class App extends React.Component {
     })
 
   }
-
-
-
   search(city, price, leaveDate, returnDate) {
     $.ajax({
       method: 'POST',
@@ -133,6 +122,13 @@ class App extends React.Component {
     </div>)
   }
 }
+ReactDOM.render(<App />, document.getElementById('app'));
+
+
+
+
+
+
 
 // city: null,
 // price: null,
@@ -141,7 +137,6 @@ class App extends React.Component {
 // origin: null
 
 
-ReactDOM.render(<App />, document.getElementById('app'));
 
 
 
