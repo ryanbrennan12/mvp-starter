@@ -12,8 +12,8 @@ const Button = styled.button`
   font-family:  Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif;
   outline: 0;
   `;
-  
-  
+
+
   /* color:blue; */
 const Div = styled.div`
   margin-top: 40px;
@@ -47,27 +47,13 @@ class Search extends React.Component {
       leave: '',
       return: '',
     }
+    this.handleChange = this.handleChange.bind(this);
+    this.search = this.search.bind(this)
   }
 
-
-  onChangeCity(e) {
+  handleChange(e) {
     this.setState({
-      city: e.target.value
-    })
-  }
-  onPriceChange(e) {
-    this.setState({
-      price: e.target.value
-    })
-  }
-  onLeaveChange(e) {
-    this.setState({
-      leave: e.target.value
-    })
-  }
-  onReturnChange(e) {
-    this.setState({
-      return: e.target.value
+      [e.target.name]: e.target.value
     })
   }
 
@@ -86,30 +72,30 @@ class Search extends React.Component {
         <H2>justGo's finder is here to support your spontaneity</H2>
     <Div>
       Leaving From
-          <p><Input value={this.state.city} onChange={this.onChangeCity.bind(this)} /></p>
+          <p><Input name='city' value={this.state.city} onChange={this.handleChange} /></p>
     </Div>
       <Div>
         Budget
-          <p><Input value={this.state.price} onChange={this.onPriceChange.bind(this)} /></p>
+          <p><Input name='price' value={this.state.price} onChange={this.handleChange} /></p>
       </Div>
       <Div>
         Depart
-          <p><Input value={this.state.leave} onChange={this.onLeaveChange.bind(this)} /></p>
+          <p><Input name='leave' value={this.state.leave} onChange={this.handleChange} /></p>
       </Div>
       <Div>
-        Coming Back 
-          <p><Input value={this.state.return} onChange={this.onReturnChange.bind(this)} /></p>
+        Coming Back
+          <p><Input name='return' value={this.state.return} onChange={this.handleChange} /></p>
       </Div>
       <Div>
-    <Button onClick={this.search.bind(this)}>Search Flights</Button>
+    <Button onClick={this.search}>Search Flights</Button>
     </Div>
   </Div>
-     
+
     )
   }
 }
 
 export default Search
-        
+
 
 
